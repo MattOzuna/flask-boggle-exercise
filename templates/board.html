@@ -1,0 +1,18 @@
+{% extends 'base.html'  %}
+{% block content %}
+{% for row in board %}
+    <div>
+    {% for letter in row %}
+        <span>{{letter}}</span>
+    {% endfor %}
+    </div>
+{% endfor %}
+
+<form action="/guess" method="POST">
+    <div class="form_input">
+        <label for="guess">Guess a word</label>
+        <input type="text" id='guess' name="guess">
+    </div>
+    <button>Submit</button>
+</form>
+{% endblock%}
